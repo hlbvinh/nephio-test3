@@ -19,17 +19,10 @@ spec:
         image: hlbvinh/ibcf_rhel88:v3
         securityContext:
           privileged: true
-        volumeMounts:
-        - name: cfg-volume
-          mountPath: /home/etc/
         ports:
         - containerPort: 8011
           name: extern
           protocol: UDP
-      volumes:
-      - name: cfg-volume
-        persistentVolumeClaim:
-          claimName: pvc-home-etc-ibcf
 
 ---
 apiVersion: v1
